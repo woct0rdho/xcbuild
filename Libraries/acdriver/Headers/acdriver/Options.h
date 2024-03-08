@@ -73,6 +73,7 @@ private:
     ext::optional<std::string> _filterForDeviceModel;
     ext::optional<std::string> _filterForDeviceOsVersion;
     ext::optional<std::string> _assetPackOutputSpecifications;
+    ext::optional<std::string> _developmentRegion;
 
 private:
     // Options not compatible with Apple's actool
@@ -156,6 +157,8 @@ public:
     { return _filterForDeviceOsVersion; }
     ext::optional<std::string> const &assetPackOutputSpecifications() const
     { return _assetPackOutputSpecifications; }
+    ext::optional<std::string> const &developmentRegion() const
+    { return _developmentRegion; }
 
 public:
     NonStandard::ActoolOptions const &nonStandardOptions() const

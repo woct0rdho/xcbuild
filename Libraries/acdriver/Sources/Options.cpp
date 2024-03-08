@@ -83,6 +83,8 @@ parseArgument(std::vector<std::string> const &args, std::vector<std::string>::co
         return libutil::Options::Next<std::string>(&_filterForDeviceOsVersion, args, it);
     } else if (arg == "--asset-pack-output-specifications") {
         return libutil::Options::Next<std::string>(&_assetPackOutputSpecifications, args, it);
+    } else if (arg == "--development-region") {
+        return libutil::Options::Next<std::string>(&_developmentRegion, args, it);
     } else if (!arg.empty() && arg[0] != '-') {
         return libutil::Options::AppendCurrent<std::string>(&_inputs, arg);
     } else {
