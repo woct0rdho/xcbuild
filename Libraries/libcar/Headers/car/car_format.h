@@ -214,7 +214,7 @@ LIBUTIL_PACKED_STRUCT_BEGIN struct car_key_format {
     uint32_t reserved;
     uint32_t num_identifiers;
     uint32_t identifier_list[0];
-} LIBUTIL_PACKED_STRUCT_END;
+} LIBUTIL_PACKED_STRUCT_END_ALIGNED_FOUR;
 
 // length is key length
 typedef char car_facet_key;

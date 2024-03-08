@@ -15,6 +15,7 @@
 #else
 #define LIBUTIL_PACKED_STRUCT_BEGIN
 #define LIBUTIL_PACKED_STRUCT_END __attribute__((__packed__))
+#define LIBUTIL_PACKED_STRUCT_END_ALIGNED_FOUR __attribute__((__packed__, aligned(4)))
 #endif
 
 #endif  // !__libutil_CompilerSupport_h
