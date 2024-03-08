@@ -1109,7 +1109,7 @@ removeDirectory(std::string const &path, bool recursive)
                     }
                     break;
                 case Type::Directory:
-                    if (!this->removeDirectory(full, false)) {
+                    if (!this->removeDirectory(full, true)) {
                         success = false;
                         return false;
                     }
