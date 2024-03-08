@@ -35,6 +35,8 @@ parseArgument(std::vector<std::string> const &args, std::vector<std::string>::co
             return libutil::Options::Next<std::string>(&_outputEncoding, args, it);
         } else if (arg == "--outdir") {
             return libutil::Options::Next<std::string>(&_outputDirectory, args, it);
+        } else if (arg == "--outfilename") {
+            return libutil::Options::Next<std::string>(&_outputFileName, args, it);
         } else if (arg == "--") {
             _separator = true;
             return std::make_pair(true, std::string());

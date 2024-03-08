@@ -22,6 +22,7 @@ class Options {
 private:
     std::vector<std::string>   _inputs;
     ext::optional<std::string> _outputDirectory;
+    ext::optional<std::string> _outputFileName;
 
 public:
     ext::optional<bool>        _validate;
@@ -42,6 +43,8 @@ public:
     { return _inputs; }
     ext::optional<std::string> const &outputDirectory() const
     { return _outputDirectory; }
+    ext::optional<std::string> const &outputFileName() const
+    { return _outputFileName; }
 
 public:
     bool validate() const

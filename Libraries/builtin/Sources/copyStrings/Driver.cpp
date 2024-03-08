@@ -177,8 +177,17 @@ run(process::Context const *processContext, libutil::Filesystem *filesystem)
             }
         }
 
-        /* Output to the same name as the input, but in the output directory. */
-        std::string outputPath = FSUtil::ResolveRelativePath(*options.outputDirectory(), processContext->currentDirectory()) + "/" + FSUtil::GetBaseName(inputPath);
+        std::string outputFileName;
+        if (options.outputFileName())
+        {
+            outputFileName = options.outputFileName()->c_str();
+        }
+        else
+        {
+            outputFileName = FSUtil::GetBaseName(inputPath);
+        }
+
+        std::string outputPath = FSUtil::ResolveRelativePath(*options.outputDirectory(), processContext->currentDirectory()) + "/" + outputFileName;
 
         /* Write out the output. */
         auto serialize = plist::Format::Any::Serialize(deserialize.first.get(), outputFormat);
