@@ -91,6 +91,8 @@ endif ()
 include(CTest)
 
 if (BUILD_TESTING)
+  set(GOOGLETEST_VERSION 1.14.0)
+
   add_subdirectory(ThirdParty/googletest/googletest)
 
   function (ADD_UNIT_GTEST LIBRARY NAME SOURCES)
